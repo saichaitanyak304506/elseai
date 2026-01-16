@@ -106,6 +106,33 @@ else-ai/
 
 ```
 
+# 🏛️ System Architecture
+
+The architecture diagram below shows how the frontend, backend, database, and external AI services interact in **ElseAI**.
+
+![ElseAI Architecture Diagram](docs/elseai-archt-diagram.png)
+
+### 📌 Architecture Summary
+- React frontend communicates with FastAPI via REST APIs
+- FastAPI handles business logic, authentication, and AI requests
+- External AI services generate text and images
+- Cloud services manage media storage and processing
+
+
+# 🗂️ Database Design (ER Diagram)
+
+The ER diagram represents the database structure of **ElseAI**, showing how users and generation histories are related.
+
+![ElseAI ER Diagram](docs/elseai-er-diagram.png)
+
+### 📌 Database Summary
+- One user can have multiple text generation records
+- One user can have multiple image generation records
+- Foreign keys ensure data integrity
+
+
+
+
 # ⚙️ Installation & Setup
 
 ### 🔹 Prerequisites
