@@ -1,0 +1,62 @@
+import { assets } from "../assets/assets.ts";
+
+interface CardItem {
+  id: number;
+  cardInfo: string;
+  cardIcon: string;
+  mobileCardInfo: string;
+}
+
+const cardContent: CardItem[] = [
+  {
+    id: 1,
+    cardInfo: "Suggest beautiful places to see on an upcoming road trip",
+    cardIcon: assets.compass_icon,
+    mobileCardInfo: "Destinations",
+  },
+  {
+    id: 2,
+    cardInfo: "Briefly summarize this concept: urban planning",
+    cardIcon: assets.bulb_icon,
+    mobileCardInfo: "Planning",
+  },
+  {
+    id: 3,
+    cardInfo: "Brainstorm team bonding activities for our work retreat",
+    cardIcon: assets.message_icon,
+    mobileCardInfo: "Activities",
+  },
+  {
+    id: 4,
+    cardInfo: "Tell me about React js and React native",
+    cardIcon: assets.code_icon,
+    mobileCardInfo: "Code",
+  },
+];
+
+const Cards: React.FC = () => {
+  return (
+    <div className="grid grid-cols-2  justify-center gap-10 p-3 pb-10">
+      {cardContent.map((card) => (
+        <div
+          key={card.id}
+          className="md:w-60 p-3 flex items-center justify-between bg-[#f0f4f9] rounded-2xl cursor-pointer hover:shadow-md dark:bg-gray-800 dark:border dark:border-gray-500"
+        >
+          <p className="text-[#585858] text-[15px] hidden md:block dark:text-gray-300/80">
+            {card.cardInfo}
+          </p>
+          <p className="text-[#585858] text-[15px] block md:hidden dark:text-gray-300/80">
+            {card.mobileCardInfo}
+          </p>
+          <img
+            src={card.cardIcon}
+            alt="card-icon"
+            className="w-8 h-8 bg-white p-1 rounded-full"
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Cards;
